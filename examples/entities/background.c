@@ -22,6 +22,6 @@ background_entity_new (struct arena *a, struct scene *s)
 
   entity_cadd (e, position_component_new (a, e, 0, 0), a);
   entity_cadd (e, sprite_component_new (a, e, sprite, WIDTH, HEIGHT), a);
-  
+
   return e;
 }

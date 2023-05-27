@@ -26,6 +26,6 @@ button_entity_new (struct arena *a, struct scene *s)
   entity_cadd (e, sprite_component_new (a, e, sprite, 5, 5), a);
   entity_cadd (e, button_component_new (a, e, callback), a);
   entity_cadd (e, movement_component_new (a, e), a);
-  
+
   return e;
 }

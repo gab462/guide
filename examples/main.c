@@ -12,7 +12,7 @@ int
 main (void)
 {
   char mem[MEMSIZE] = {0};
-  static uint32_t canvas[HEIGHT * WIDTH] = {0};
+  uint32_t canvas[HEIGHT * WIDTH] = {0};
 
   struct arena arena = arena_new (mem, MEMSIZE);
 
