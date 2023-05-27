@@ -47,8 +47,8 @@ input_mclick (struct input *self, size_t x, size_t y)
 {
   self->mclicked = 1;
   self->mheld = 1;
-  self->mpos[0] = x;
-  self->mpos[1] = y;
+  self->mx = x;
+  self->my = y;
 }
 
 void

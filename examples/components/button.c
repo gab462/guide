@@ -9,17 +9,14 @@ update (struct component *self, int dt, struct input *i)
   if (!input_mclicked (i))
     return;
 
-  size_t mx = i->mpos[0];
-  size_t my = i->mpos[1];
-
   struct component *pc = entity_cget (self->entity, POSITION_COMPONENT);
   struct position_data *pos = pc->data;
 
   struct component *sc = entity_cget (self->entity, SPRITE_COMPONENT);
   struct sprite_data *sprite = sc->data;
 
-  bool clicked = pos->x < mx && mx < pos->x + sprite->w
-    && pos->y < my && my < pos->y + sprite->h;
+  bool clicked = pos->x < i->mx && i->mx < pos->x + sprite->w
+    && pos->y < i->my && i->my < pos->y + sprite->h;
 
   if (clicked)
     {

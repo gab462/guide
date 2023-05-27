@@ -24,7 +24,8 @@ struct input
   uint32_t kheldmask;
   bool mclicked;
   bool mheld;
-  size_t mpos[2];
+  size_t mx;
+  size_t my;
 };
 
 struct component

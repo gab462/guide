@@ -1,8 +1,9 @@
 #include "../app.h"
 #include <SDL.h>
 
-#define WINDOW_WIDTH (WIDTH * 10)
-#define WINDOW_HEIGHT (HEIGHT * 10)
+#define SCALE 10
+#define WINDOW_WIDTH (WIDTH * SCALE)
+#define WINDOW_HEIGHT (HEIGHT * SCALE)
 
 static struct
 {
@@ -55,7 +56,7 @@ events (struct input *i, bool *gamerunning)
           break;
 
         case SDL_MOUSEBUTTONDOWN:
-          input_mclick (i, ev.button.x / 10, ev.button.y / 10);
+          input_mclick (i, ev.button.x / SCALE, ev.button.y / SCALE);
           break;
 
         case SDL_MOUSEBUTTONUP:
