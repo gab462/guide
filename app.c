@@ -14,12 +14,6 @@ app_new (struct arena *a, uint32_t *canvas)
 }
 
 void
-app_sadd (struct app *self, struct scene *s, struct arena *a)
-{
-  list_append (self->scenes, s, a);
-}
-
-void
 app_sset (struct app *self, int sid)
 {
   for (struct list *sl = self->scenes; sl != NULL; sl = sl->tail)

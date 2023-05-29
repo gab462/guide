@@ -20,8 +20,8 @@ background_entity_new (struct arena *a, struct scene *s)
 
   fill_sprite ();
 
-  entity_cadd (e, position_component_new (a, e, 0, 0), a);
-  entity_cadd (e, sprite_component_new (a, e, sprite, WIDTH, HEIGHT), a);
+  list_append (e->components, position_component_new (a, e, 0, 0), a);
+  list_append (e->components, sprite_component_new (a, e, sprite, WIDTH, HEIGHT), a);
 
   return e;
 }

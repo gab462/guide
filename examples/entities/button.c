@@ -22,10 +22,11 @@ button_entity_new (struct arena *a, struct scene *s)
 {
   struct entity *e = entity_new (a, BUTTON_ENTITY, s);
 
-  entity_cadd (e, position_component_new (a, e, 0, 0), a);
-  entity_cadd (e, sprite_component_new (a, e, sprite, 5, 5), a);
-  entity_cadd (e, button_component_new (a, e, callback), a);
-  entity_cadd (e, movement_component_new (a, e), a);
+  list_append (e->components, position_component_new (a, e, 0, 0), a);
+  list_append (e->components, position_component_new (a, e, 0, 0), a);
+  list_append (e->components, sprite_component_new (a, e, sprite, 5, 5), a);
+  list_append (e->components, button_component_new (a, e, callback), a);
+  list_append (e->components, movement_component_new (a, e), a);
 
   return e;
 }

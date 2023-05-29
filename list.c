@@ -30,6 +30,7 @@ list_append (struct list *self, void *data, struct arena *a)
     }
 }
 
+/*
 void
 list_remove (struct list *self, void *data)
 {
@@ -39,3 +40,4 @@ list_remove (struct list *self, void *data)
         l->head = NULL;
     }
 }
+*/

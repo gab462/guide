@@ -17,7 +17,7 @@ main (void)
   struct arena arena = arena_new (mem, MEMSIZE);
 
   struct app *app = app_new (&arena, canvas);
-  app_sadd (app, main_scene_new (&arena, app), &arena);
+  list_append (app->scenes, main_scene_new (&arena, app), &arena);
   app_sset (app, MAIN_SCENE);
 
   bool gamerunning = true;

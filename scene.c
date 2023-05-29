@@ -12,18 +12,6 @@ scene_new (struct arena *a, int id, struct app *app)
   return s;
 }
 
-void
-scene_eadd (struct scene *self, struct entity *e, struct arena *a)
-{
-  list_append (self->entities, e, a);
-}
-
-void
-scene_erm (struct scene *self, struct entity *e)
-{
-  list_remove (self->entities, e);
-}
-
 struct entity *
 scene_eget (struct scene *self, int eid)
 {

@@ -12,18 +12,6 @@ entity_new (struct arena *a, int id, struct scene *s)
   return e;
 }
 
-void
-entity_cadd (struct entity *self, struct component *c, struct arena *a)
-{
-  list_append (self->components, c, a);
-}
-
-void
-entity_crm (struct entity *self, struct component *c)
-{
-  list_remove (self->components, c);
-}
-
 struct component *
 entity_cget (struct entity *self, int cid)
 {

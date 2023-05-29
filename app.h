@@ -65,7 +65,7 @@ void arena_free (struct arena *self);
 
 struct list *list_new (struct arena *a);
 void list_append (struct list *self, void *data, struct arena *a);
-void list_remove (struct list *self, void *data);
+//void list_remove (struct list *self, void *data);
 
 struct input *input_new (struct arena *a);
 void input_kpress (struct input *self, char c);
@@ -89,20 +89,15 @@ void component_update (struct component *self, int dt, struct input *i);
 void component_render (struct component *self, uint32_t *canvas);
 
 struct entity *entity_new (struct arena *a, int id, struct scene *s);
-void entity_cadd (struct entity *self, struct component *c, struct arena *a);
-void entity_crm (struct entity *self, struct component *c);
 struct component *entity_cget (struct entity *self, int cid);
 void entity_update (struct entity *self, int dt, struct input *i);
 void entity_render (struct entity *self, uint32_t *canvas);
 
 struct scene *scene_new (struct arena *a, int id, struct app *app);
-void scene_eadd (struct scene *self, struct entity *c, struct arena *a);
-void scene_erm (struct scene *self, struct entity *c);
 struct entity *scene_eget (struct scene *self, int eid);
 void scene_update (struct scene *self, int dt, struct input *i);
 void scene_render (struct scene *self, uint32_t *canvas);
 
 struct app *app_new (struct arena *a, uint32_t *canvas);
-void app_sadd (struct app *self, struct scene *s, struct arena *a);
 void app_sset (struct app *self, int sid);
 void app_tick (struct app *self, int dt);
