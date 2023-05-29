@@ -1,7 +1,7 @@
 #include "../app.h"
 #include "scenes/scenes.h"
 
-#define MEMSIZE (1024 * 1024)
+#define MEMSIZE (1024)
 
 extern void setup (void);
 extern void quit (void);
